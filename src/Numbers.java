@@ -53,19 +53,17 @@ public class Numbers {
         System.out.print("Enter positive number: ");
         int n = enterData().nextInt();
         int sum = 0;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i < n; i++) {
             sum += i;
         }
         System.out.println("Sum of positive integers from 1 to " + n + ":  " + sum);
     }
 
     public static void getResultsOfMultiplications() {
-        int n = 1;
         int m = 7;
-        while (m < 98) {
-            m = 7*n;
+        while (m < 99) {
             System.out.print(m + " ");
-            n++;
+            m += 7;
         }
     }
 
@@ -77,8 +75,8 @@ public class Numbers {
     }
 
     public static void calculateSquareOfNumbers() {
-        for (int i = 10; i <= 20; i++) {
-            System.out.print(i*i + " ");
+        for (int square = 10; square <= 20; square++) {
+            System.out.print((int)Math.pow(square, 2));
         }
     }
 }
