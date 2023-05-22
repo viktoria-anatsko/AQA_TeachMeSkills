@@ -4,8 +4,14 @@ import java.util.Arrays;
 public class ArrayMethods {
     public static void main(String[] args) {
         checkNumberInArray();
+        System.out.println();
+
         removeNumberFromArray();
+        System.out.println();
+
         createArrayRandom();
+        System.out.println();
+
         compareArrays();
     }
 
@@ -14,21 +20,24 @@ public class ArrayMethods {
     }
 
     public static void checkNumberInArray() {
-        int[] array = new int[] {7, 2, 5, 0, 15, 26, 39, 61, 3, 84};
+        int[] array = new int[] {7, 6, 5, 0, 15, 26, 39, 6, 3, 6};
         System.out.println("Enter integer number: ");
         int num = input().nextInt();
-        String str = "You number isn't included in this array.";
+        int count = 0;
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] == num) {
-                str = "You number is included in this array.";
-                break;
+                count += 1;
             }
         }
-       System.out.println(str);
+        if (count == 0) {
+            System.out.println("You number isn't included in this array.");
+        } else {
+            System.out.println("You number is included in this array " + count + " times.");
+        }
     }
 
-    public static void removeNumberFromArray(){
+    public static void removeNumberFromArray() {
         int[] array1 = new int[] {8, 17, 1, 99, 1, 27, 49, 64};
         System.out.println("Enter integer number: ");
         int num1 = input().nextInt();
