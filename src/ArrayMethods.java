@@ -96,10 +96,19 @@ public class ArrayMethods {
     }
 
     public static void compareArrays() {
-        int[] arr1 = new int[] {12, 0, 3, 56, -4};
-        int[] arr2 = new int[] {3, -8, 17, 1, 29};
-        System.out.println(Arrays.toString(arr1));
-        System.out.println(Arrays.toString(arr2));
+        int[] arr1 = new int[5];
+        int[] arr2 = new int[5];
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = ((int)(Math.random() * 101) - 50);
+        }
+        System.out.println("Created 1 array: " + Arrays.toString(arr1));
+
+        for (int i = 0; i < arr2.length; i++) {
+            arr2[i] = ((int)(Math.random() * 101) - 50);
+        }
+        System.out.println("Created 2 array: " + Arrays.toString(arr2));
+
 
         int sum1 = 0;
         for (int i = 0; i < arr1.length; i++) {
