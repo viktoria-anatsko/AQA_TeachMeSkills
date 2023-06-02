@@ -1,45 +1,50 @@
 package CreditCard;
 
+import java.util.Scanner;
+
 public class CreditCard {
     private String accountNumber;
     private double balance;
-    private double accrual;
-    private double writeOff;
+    private String cardHolder;
 
-    public CreditCard(String accountNumber, double balance) {
+    public CreditCard() {
+        this.accountNumber = "Unknown Card Number";
+        this.cardHolder = "Unknown Holder";
+    }
+
+    public CreditCard(String accountNumber, String cardHolder, double balance) {
         this.accountNumber = accountNumber;
+        this.cardHolder = cardHolder;
         this.balance = balance;
-    }
-
-    public double getAccrual() {
-        return accrual;
-    }
-
-    public double getWriteOff() {
-        return writeOff;
-    }
-
-    public void setAccrual(double accrual) {
-        this.accrual = accrual;
-    }
-
-    public void setWriteOff(double writeOff) {
-        this.writeOff = writeOff;
     }
 
     public void getCardInfo() {
         System.out.println("Credit card information:");
-        System.out.println("Credit card number: " + accountNumber);
-        System.out.println("Balance: " + balance);
+        System.out.println("Credit card number: " + this.accountNumber);
+        System.out.println("Credit card holder: " + this.cardHolder);
+        System.out.println("Balance: " + this.balance);
     }
 
     public void addMoney() {
-        double newBalance = balance + getAccrual();
-        System.out.println("Account balance after accrual: " + newBalance);
+        System.out.println("Enter sum: ");
+        Scanner input = new Scanner(System.in);
+        {
+            balance += input.nextInt();
+            System.out.println("Credit card number: " + this.accountNumber);
+            System.out.println("Credit card holder: " + this.cardHolder);
+            System.out.println("Balance: " + this.balance);
+        }
     }
 
     public void withdrawMoney() {
-        double newBalance = balance - getWriteOff();
-        System.out.println("Account balance after withdrawal: " + newBalance);
+        System.out.println("Enter amount: ");
+        Scanner input = new Scanner(System.in);
+        {
+            balance -= input.nextInt();
+            System.out.println("Credit card number: " + this.accountNumber);
+            System.out.println("Credit card holder: " + this.cardHolder);
+            System.out.println("Balance: " + this.balance);
+            balance--;
+        }
     }
 }
